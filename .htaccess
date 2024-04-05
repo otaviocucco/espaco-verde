@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# informa que será aplicada uma condicao no arquivo solicitado 
+RewriteCond %{REQUEST_FILENAME} !-f [OR] 
+RewriteCond %{REQUEST_FILENAME} \.php$
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+</IfModule>
